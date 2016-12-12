@@ -1,0 +1,14 @@
+{% from "_formhelpers.html" import render_field %}
+{% include 'header.html' %}
+{% block body %}
+<div class="login_container">
+    <div>Reset Password</div>
+    <form action="{{ url_for('reset_with_token', token=token) }}" method="POST">
+        {{ render_field( form.pw ) }}
+        {{ render_field( form.confirm_pw ) }}
+        {{ form.csrf_token }}
+        <input type="submit" value="Change my password" />
+    </form>
+</div>
+{% endblock %}
+{% include 'footer.html' %}

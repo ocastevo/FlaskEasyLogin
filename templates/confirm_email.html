@@ -1,0 +1,10 @@
+{% from "_formhelpers.html" import render_field %}
+{% include 'header.html' %}
+<div class="narrow center">
+    <div>Click to confirm your email.</div>
+    <form action="{{ url_for('confirm_email', token = token) }}" method='POST'>
+        {{ register_form.csrf_token }}
+        {{ render_field( register_form.confirm ) }}
+    </form>
+</div>
+{% include 'footer.html' %}

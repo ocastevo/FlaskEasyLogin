@@ -1,0 +1,19 @@
+{% from "_formhelpers.html" import render_field %}
+{% include 'header.html' %}
+<div class="narrow center">
+    <div>Create an account</div>
+    <form action="{{ url_for('register') }}" method='POST'>
+        {{ register_form.csrf_token }}
+        {{ render_field(register_form.username) }}
+        {{ render_field(register_form.first_name) }}
+        {{ render_field(register_form.last_name) }}
+
+        {{ render_field(register_form.email) }}
+        {{ render_field(register_form.confirm_email) }}
+
+        {{ render_field(register_form.pw) }}
+        {{ render_field(register_form.confirm_pw) }}
+        <input type='submit' name='submit' value="Register" class="button button-primary">
+    </form>
+</div>
+{% include 'footer.html' %}

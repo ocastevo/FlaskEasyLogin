@@ -1,0 +1,17 @@
+{% from "_formhelpers.html" import render_field %}
+{% include 'header.html' %}
+<div class="narrow center">
+    <a href="{{ url_for('index') }}"><div class="logo">---LOGO---</div></a>
+    {% if failed_login != '' %}
+        <div class="isa_error">{{ failed_login }}</div>
+    {% endif %}
+    <form action='login' method='POST'>
+        {{ login_form.csrf_token }}
+        {{ render_field(login_form.email) }}
+        {{ render_field(login_form.pw) }}
+        <input type='submit' name='submit' value="Login" class="button button-primary">
+    </form>
+    <a href="{{ url_for('reset') }}">Forgot?</a>
+    <a href="{{ url_for('register') }}" style="float:right;">Register Here</a>
+</div>
+{% include 'footer.html' %}

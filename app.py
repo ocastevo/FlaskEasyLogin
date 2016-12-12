@@ -13,9 +13,7 @@ from Forms import RegisterForm
 from Forms import PassResetForm
 from Forms import ReadyResetForm
 from Forms import ConfirmEmailForm
-from Forms import UploadScriptForm
 from users_table import Users
-from project_table import Project
 from config import app
 from config import bcrypt
 from config import ts

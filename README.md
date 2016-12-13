@@ -1,4 +1,4 @@
-# FlaskLogin
+# FlaskEasyLogin
 Flask Login with Registration, password reset, email confirmation, CSRF protection, and password hash.
 
 # Installation
